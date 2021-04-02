@@ -1,4 +1,6 @@
 ## INFRAESTRUCTURE NGINX-LETSENCRYPT + WORDPRESS*2 + MOODLE
+Thanks to kevingo710 for this project.
+(just trying to use the latest version of moodle)
 
 Clone this project
   1. Clone repo
