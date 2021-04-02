@@ -25,9 +25,9 @@ services:
             - 80
             - 443
         environment:
-            - VIRTUAL_HOST=moodle.dinasaccarola.tk
-            - LETSENCRYPT_HOST=moodle.dinasaccarola.tk
-            - LETSENCRYPT_EMAIL=kevin.gracia.tic@gmail.com
+            - VIRTUAL_HOST=uto.edukte.org/www.uto.edukte.org
+            - LETSENCRYPT_HOST=uto.edukte.org/www.uto.edukte.org
+            - LETSENCRYPT_EMAIL=nielmurillo7@gmail.com
         env_file:
             - moodle_variables.env
         deploy:
