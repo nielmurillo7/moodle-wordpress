@@ -12,32 +12,32 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-    moodleapp:
-        image: jhardison/moodle:latest
-        links:
-            - dbapp:DB
-        depends_on:
-            - dbapp
-        restart: always
-        volumes:
-            - moodleapp-data:/var/moodledata
-        expose:
-            - 80
-            - 443
-        environment:
-            VIRTUAL_HOST: uto.edukte.org.www.uto.edukte.org
-            LETSENCRYPT_HOST: uto.edukte.org,www.uto.edukte.org
-            LETSENCRYPT_EMAIL: nielmurillo7@gmail.com
-        env_file:
-            - moodle_variables.env
-        deploy:
-            replicas: 1
-            restart_policy:
-                condition: any
+  moodleapp:
+    image: jhardison/moodle:latest
+    links:
+      - dbapp:DB
+    depends_on:
+      - dbapp
+    restart: always
+    volumes:
+      - moodleapp-data:/var/moodledata
+    expose:
+      - 80
+      - 443
+    environment:
+      VIRTUAL_HOST: uto.edukte.org.www.uto.edukte.org
+      LETSENCRYPT_HOST: uto.edukte.org,www.uto.edukte.org
+      LETSENCRYPT_EMAIL: nielmurillo7@gmail.com
+    env_file:
+      - moodle_variables.env
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
                 
 volumes:
-    db-volume:
-    moodleapp-data:
+  db-volume:
+  moodleapp-data:
 
 networks:
   default:
