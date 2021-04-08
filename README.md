@@ -10,7 +10,20 @@ Clone this project
   4. Moodle after install error IP-> check nginx_container IP & exec in moodleDB_container `docker exec -it moodleDB_container mysql -uroot -p`  -> `use moodledb`;
   --> `UPDATE mdl_user set lastip='172.docker.nginx.IP' where username='admin';`
   5. WordPress Plugin e-mail -> [WP Mail SMTP by WPForms](https://es.wordpress.org/plugins/wp-mail-smtp/)
-  6. WordPress Plugin contact-form -> [Contact Form 7](https://es.wordpress.org/plugins/contact-form-7/) 
+  6. WordPress Plugin contact-form -> [Contact Form 7](https://es.wordpress.org/plugins/contact-form-7/)
+  7. * Change Upload Max File Size
+    ## NGINX (nginx container)
+      -> docker exec -it nginx-proxy bash
+      -> cd /etc/nginx/conf.d
+      -> cat > my.conf
+      -> client_max_body_size 100M;
+      close (ctrl + D)
+    ## MOODLE (moodle container)
+      -> docker exec -it moodle_moodleapp_1 bash
+      -> cd etc/php/7.4/apache2
+      -> sed -i 's/PHP_UPLOAD_MAX_FILESIZE=2M/PHP_UPLOAD_MAX_FILESIZE=100M/' php.ini
+      -> sed -i 's/PHP_POST_MAX_SIZE=8M/PHP_POST_MAX_SIZE=100M/' php.ini
+      close (ctrl + D)
 
 ### _Resources_:
 * DigitalOcean 🛫
