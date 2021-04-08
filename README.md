@@ -12,18 +12,8 @@ Clone this project
   5. WordPress Plugin e-mail -> [WP Mail SMTP by WPForms](https://es.wordpress.org/plugins/wp-mail-smtp/)
   6. WordPress Plugin contact-form -> [Contact Form 7](https://es.wordpress.org/plugins/contact-form-7/)
   7. * Change Upload Max File Size
-    ## NGINX (nginx container)
-      -> docker exec -it nginx-proxy bash
-      -> cd /etc/nginx/conf.d
-      -> cat > my.conf
-      -> client_max_body_size 100M;
-      close (ctrl + D)
-    ## MOODLE (moodle container)
-      -> docker exec -it moodle_moodleapp_1 bash
-      -> cd etc/php/7.4/apache2
-      -> sed -i 's/PHP_UPLOAD_MAX_FILESIZE=2M/PHP_UPLOAD_MAX_FILESIZE=100M/' php.ini
-      -> sed -i 's/PHP_POST_MAX_SIZE=8M/PHP_POST_MAX_SIZE=100M/' php.ini
-      close (ctrl + D)
+  8. ## NGINX (nginx container) -> docker exec -it nginx-proxy bash -> cd /etc/nginx/conf.d -> cat > my.conf -> client_max_body_size 100M; close (ctrl + D)
+  9. ## MOODLE (moodle container) -> docker exec -it moodle_moodleapp_1 bash -> cd etc/php/7.4/apache2 -> sed -i 's/PHP_UPLOAD_MAX_FILESIZE=2M/PHP_UPLOAD_MAX_FILESIZE=100M/' php.ini -> sed -i 's/PHP_POST_MAX_SIZE=8M/PHP_POST_MAX_SIZE=100M/' php.ini close (ctrl + D)
 
 ### _Resources_:
 * DigitalOcean 🛫
