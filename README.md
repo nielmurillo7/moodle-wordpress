@@ -14,8 +14,8 @@ Clone this project
 ### Change Upload Max File Size
   8. * NGINX (nginx container) -> docker exec -it nginx-proxy bash -> cd /etc/nginx/conf.d -> cat > my.conf -> client_max_body_size 100M; close (ctrl + D)
   9. * MOODLE (moodle container) -> docker exec -it moodle_moodleapp_1 bash -> cd etc/php/7.4/apache2 
-     -> sed -i 's/PHP_UPLOAD_MAX_FILESIZE=2M/PHP_UPLOAD_MAX_FILESIZE=100M/' php.ini
-     -> sed -i 's/PHP_POST_MAX_SIZE=8M/PHP_POST_MAX_SIZE=100M/' php.ini
+     <p>-> sed -i 's/PHP_UPLOAD_MAX_FILESIZE=2M/PHP_UPLOAD_MAX_FILESIZE=100M/' php.ini
+     <br>-> sed -i 's/PHP_POST_MAX_SIZE=8M/PHP_POST_MAX_SIZE=100M/' php.ini
      close (ctrl + D)
 
 ### _Resources_:
